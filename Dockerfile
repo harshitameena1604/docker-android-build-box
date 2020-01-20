@@ -78,6 +78,12 @@ RUN apt-get update -qq > /dev/null && \
         | bash - > /dev/null && \
     apt-get install -qq nodejs > /dev/null && \
     apt-get clean > /dev/null && \
+    curl -sS -k https://dl.yarnpkg.com/debian/pubkey.gpg \
+        | apt-key add - > /dev/null && \
+    echo "deb https://dl.yarnpkg.com/debian/ stable main" \
+        | tee /etc/apt/sources.list.d/yarn.list > /dev/null && \
+    apt-get update -qq > /dev/null && \
+    apt-get install -qq yarn > /dev/null && \
     rm -rf /var/lib/apt/lists/ && \
     npm install --quiet -g npm > /dev/null && \
     npm install --quiet -g \
