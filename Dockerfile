@@ -1,6 +1,6 @@
 FROM ubuntu:18.04
 
-MAINTAINER Ming Chen
+MAINTAINER Mayank Kapoor
 
 ENV ANDROID_HOME="/opt/android-sdk" \
     ANDROID_NDK="/opt/android-ndk" \
@@ -92,10 +92,7 @@ RUN apt-get update -qq > /dev/null && \
         node-gyp npm-check-updates \
         react-native-cli > /dev/null && \
     npm cache clean --force > /dev/null && \
-    rm -rf /tmp/* /var/tmp/* && \
-    echo "Installing fastlane" && \
-    gem install fastlane --quiet --no-document > /dev/null && \
-    gem install bundler --quiet --no-document > /dev/null
+    rm -rf /tmp/* /var/tmp/*
 
 # Install Android SDK
 RUN echo "Installing sdk tools ${ANDROID_SDK_TOOLS_VERSION}" && \
@@ -187,7 +184,6 @@ RUN echo "Installing sdk tools ${ANDROID_SDK_TOOLS_VERSION}" && \
     rm -f flutter.tar.xz && \
     flutter config --no-analytics
 
-
 # Copy sdk license agreement files.
 RUN mkdir -p $ANDROID_HOME/licenses
 COPY sdk/licenses/* $ANDROID_HOME/licenses/
@@ -198,3 +194,12 @@ RUN mkdir -p /home/jenkins
 RUN chmod 777 /home/jenkins
 RUN chmod 777 /var/lib/jenkins/workspace
 RUN chmod 777 $ANDROID_HOME/.android
+
+# Install fastlane with bundler and Gemfile
+COPY Gemfile /tmp/Gemfile
+COPY Gemfile.lock /tmp/Gemfile.lock
+
+RUN echo "Installing fastlane" && \
+    gem install bundler --quiet --no-document > /dev/null && \
+    mkdir -p /tmp/bundle && \
+    bundle install --quiet --path=/tmp/bundle
