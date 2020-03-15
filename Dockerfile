@@ -199,7 +199,6 @@ RUN chmod 777 $ANDROID_HOME/.android
 ENV BUNDLE_GEMFILE=/tmp/Gemfile
 
 COPY Gemfile /tmp/Gemfile
-COPY Gemfile.lock /tmp/Gemfile.lock
 
 RUN echo "Installing fastlane" && \
     gem install bundler --quiet --no-document > /dev/null && \
