@@ -202,4 +202,6 @@ COPY Gemfile.lock /tmp/Gemfile.lock
 RUN echo "Installing fastlane" && \
     gem install bundler --quiet --no-document > /dev/null && \
     mkdir -p /tmp/bundle && \
+    mkdir -p /.fastlane && \
+    chmod 777 /.fastlane && \
     bundle install --quiet --path=/tmp/bundle
