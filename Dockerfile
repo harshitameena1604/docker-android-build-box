@@ -90,6 +90,7 @@ RUN apt-get update -qq > /dev/null && \
         ionic jshint karma-cli mocha \
         node-gyp npm-check-updates \
         react-native-cli > /dev/null && \
+    npm install -g appium --unsafe-perm=true --allow-root && \
     npm cache clean --force > /dev/null && \
     rm -rf /tmp/* /var/tmp/*
 
