@@ -170,6 +170,14 @@ RUN echo "Installing sdk tools ${ANDROID_SDK_TOOLS_VERSION}" && \
         "add-ons;addon-google_apis-google-18" \
         "add-ons;addon-google_apis-google-17" \
         "add-ons;addon-google_apis-google-16" > /dev/null && \
+    echo "Installing images" && \
+    yes | "$ANDROID_HOME"/tools/bin/sdkmanager \
+        "system-images;android-25;google_apis;armeabi-v7a" > /dev/null && \
+    echo "Creating AVD" && \
+    echo "no" | "$ANDROID_HOME"/tools/bin/avdmanager create avd \
+        -n Android_7.1_API_25 \
+        -k "system-images;android-25;google_apis;armeabi-v7a" \
+        --force > /dev/null && \
     echo "Installing emulator " && \
     yes | "$ANDROID_HOME"/tools/bin/sdkmanager "emulator" > /dev/null && \
     echo "Installing kotlin" && \
