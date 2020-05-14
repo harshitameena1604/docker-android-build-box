@@ -1,6 +1,6 @@
 FROM ubuntu:18.04
 
-MAINTAINER Ming Chen
+LABEL maintainer="Mayank Kapoor"
 
 ENV ANDROID_HOME="/opt/android-sdk" \
     ANDROID_NDK="/opt/android-ndk" \
@@ -61,6 +61,7 @@ RUN apt-get update -qq > /dev/null && \
         libxslt-dev \
         libxml2-dev \
         m4 \
+        maven \
         ncurses-dev \
         ocaml \
         openjdk-8-jdk \
