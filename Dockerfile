@@ -123,15 +123,7 @@ RUN echo "Installing sdk tools ${ANDROID_SDK_TOOLS_VERSION}" && \
         "platforms;android-27" \
         "platforms;android-26" \
         "platforms;android-25" \
-        "platforms;android-24" \
-        "platforms;android-23" \
-        "platforms;android-22" \
-        "platforms;android-21" \
-        "platforms;android-20" \
-        "platforms;android-19" \
-        "platforms;android-18" \
-        "platforms;android-17" \
-        "platforms;android-16" > /dev/null && \
+        "platforms;android-24" > /dev/null && \
     echo "Installing platform tools " && \
     yes | "$ANDROID_HOME"/tools/bin/sdkmanager \
         "platform-tools" > /dev/null && \
@@ -145,15 +137,6 @@ RUN echo "Installing sdk tools ${ANDROID_SDK_TOOLS_VERSION}" && \
         "build-tools;25.0.1" "build-tools;25.0.0" \
         "build-tools;24.0.3" "build-tools;24.0.2" \
         "build-tools;24.0.1" "build-tools;24.0.0" > /dev/null && \
-    echo "Installing build tools " && \
-    yes | "$ANDROID_HOME"/tools/bin/sdkmanager \
-        "build-tools;23.0.3" "build-tools;23.0.2" "build-tools;23.0.1" \
-        "build-tools;22.0.1" \
-        "build-tools;21.1.2" \
-        "build-tools;20.0.0" \
-        "build-tools;19.1.0" \
-        "build-tools;18.1.1" \
-        "build-tools;17.0.0" > /dev/null && \
     echo "Installing extras " && \
     yes | "$ANDROID_HOME"/tools/bin/sdkmanager \
         "extras;android;m2repository" \
@@ -168,11 +151,7 @@ RUN echo "Installing sdk tools ${ANDROID_SDK_TOOLS_VERSION}" && \
         "add-ons;addon-google_apis-google-24" \
         "add-ons;addon-google_apis-google-23" \
         "add-ons;addon-google_apis-google-22" \
-        "add-ons;addon-google_apis-google-21" \
-        "add-ons;addon-google_apis-google-19" \
-        "add-ons;addon-google_apis-google-18" \
-        "add-ons;addon-google_apis-google-17" \
-        "add-ons;addon-google_apis-google-16" > /dev/null && \
+        "add-ons;addon-google_apis-google-21" > /dev/null && \
     echo "Installing images" && \
     yes | "$ANDROID_HOME"/tools/bin/sdkmanager \
         "system-images;android-25;google_apis;armeabi-v7a" > /dev/null && \
