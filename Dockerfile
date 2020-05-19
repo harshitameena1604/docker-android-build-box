@@ -5,7 +5,8 @@ LABEL maintainer="Mayank Kapoor"
 ENV ANDROID_HOME="/opt/android-sdk" \
     ANDROID_NDK="/opt/android-ndk" \
     FLUTTER_HOME="/opt/flutter" \
-    JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64/
+    JAVA_HOME="/usr/lib/jvm/java-8-openjdk-amd64/" \
+    APPIUM_HOME="/usr/lib/node_modules/appium/build/lib/main.js"
 
 # Get the latest version from https://developer.android.com/studio/index.html
 ENV ANDROID_SDK_TOOLS_VERSION="4333796"
