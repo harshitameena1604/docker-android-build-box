@@ -194,3 +194,7 @@ RUN echo "Installing fastlane" && \
     mkdir -p /.fastlane && \
     chmod 777 /.fastlane && \
     bundle install --quiet
+
+COPY start.sh /tmp/start.sh
+
+RUN chmod +x /tmp/start.sh
