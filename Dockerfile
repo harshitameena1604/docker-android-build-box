@@ -195,6 +195,7 @@ RUN echo "Installing fastlane" && \
     chmod 777 /.fastlane && \
     bundle install --quiet
 
+# Create a start script for starting the emulator
 COPY start.sh /tmp/start.sh
 
 RUN chmod +x /tmp/start.sh
