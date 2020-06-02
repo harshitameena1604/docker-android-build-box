@@ -198,4 +198,4 @@ RUN echo "Installing fastlane" && \
 # Create a start script for starting the emulator
 COPY start.sh /tmp/start.sh
 
-RUN chmod +x /tmp/start.sh
+RUN chmod +x /tmp/start.sh && adb root
