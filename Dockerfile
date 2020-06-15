@@ -12,7 +12,7 @@ ENV ANDROID_HOME="/opt/android-sdk" \
 ENV ANDROID_SDK_TOOLS_VERSION="4333796"
 
 # Get the latest version from https://developer.android.com/ndk/downloads/index.html
-ENV ANDROID_NDK_VERSION="21"
+ENV ANDROID_NDK_VERSION="17"
 
 # nodejs version
 ENV NODE_VERSION="12.x"
